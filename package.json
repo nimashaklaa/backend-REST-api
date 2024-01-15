@@ -1,0 +1,23 @@
+{
+  "name": "backend-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-ts": "tsc --watch",
+    "watch-server": "nodemon ./dist/server.js --ignore db.json"
+  },
+  "author": "Amandi Nimasha",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "lowdb": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.1",
+    "nodemon": "^3.0.2"
+  }
+}
