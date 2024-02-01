@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class Book {
     constructor(id, title, author, publicationYear) {
         this.id = id;
@@ -6,4 +8,4 @@ class Book {
         this.publicationYear = publicationYear;
     }
 }
-export default Book;
+exports.default = Book;

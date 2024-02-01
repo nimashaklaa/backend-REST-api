@@ -19,7 +19,7 @@ describe('BookController', () => {
         db.data.items = [];
     });
 
-    it('should create a new book', async () => {
+    test('should create a new book', async () => {
         const response = await request(app)
             .post('/')
             .send({ title: 'Sample Book', author: 'John Doe', publicationYear: 2022 });
@@ -29,7 +29,7 @@ describe('BookController', () => {
         expect(response.body.book).toBe('Sample Book');
     });
 
-    it('should get a list of books', async () => {
+    test('should get a list of books', async () => {
         const response = await request(app).get('/');
 
         expect(response.status).toBe(200);
@@ -37,7 +37,7 @@ describe('BookController', () => {
         expect(response.body.items).toHaveLength(0); // Assuming the database is empty initially
     });
 
-    it('should update an existing book', async () => {
+    test('should update an existing book', async () => {
         // Assuming you have an existing book in the database
         db.data.items.push(new Book(1, 'Existing Book', 'Jane Doe', 2020));
 
@@ -49,7 +49,7 @@ describe('BookController', () => {
         expect(response.body.message).toBe('Book updated successfully');
     });
 
-    it('should delete an existing book', async () => {
+    test('should delete an existing book', async () => {
         // Assuming you have an existing book in the database
         db.data.items.push(new Book(1, 'Existing Book', 'Jane Doe', 2020));
 

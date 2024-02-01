@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -7,13 +8,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { Low } from 'lowdb';
-import { JSONFile } from "lowdb/node";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.initializedDb = exports.db = void 0;
+const lowdb_1 = require("lowdb");
+const node_1 = require("lowdb/node");
 //Set up the database
-const adapter = new JSONFile('db.json');
-const db = new Low(adapter, {
+const adapter = new node_1.JSONFile('db.json');
+const db = new lowdb_1.Low(adapter, {
     items: []
 });
+exports.db = db;
 //initialize the database with default values
 function initializedDb() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -32,4 +36,4 @@ function initializedDb() {
         }
     });
 }
-export { db, initializedDb };
+exports.initializedDb = initializedDb;
